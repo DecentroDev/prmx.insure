@@ -7,11 +7,17 @@ import logoDark from "/images/logo_dark.svg";
 import xDarkIcon from "/images/home/x_dark_icon.svg";
 import xIcon from "/images/home/x_icon.svg";
 import MenuIcons from "./icons/MenuIcons";
-import { useState } from "react";
+import { cloneElement, PropsWithChildren, useState } from "react";
 import Tag from "@/components/ui/Tag";
 import CloseIcon from "./icons/CloseIcon";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { cn } from "@/libs/utils";
+import {
+  Modal,
+  ModalContent,
+  ModalBody,
+  useDisclosure,
+} from "@nextui-org/react";
 
 const mobileMenuVariant = {
   open: {
@@ -170,9 +176,12 @@ const Header = () => {
             ))}
           </HStack>
           <HStack>
-            <Button variant={isScrollDown ? "solid" : "bordered"}>
-              LAUNCH APP
-            </Button>
+            <LaunchAppModal>
+              <Button variant={isScrollDown ? "solid" : "bordered"}>
+                LAUNCH APP
+              </Button>
+            </LaunchAppModal>
+
             <a href="https://x.com/PRMX_2024" target="_blank">
               <Button variant={isScrollDown ? "solid" : "bordered"} iconOnly>
                 {isScrollDown ? (
@@ -206,7 +215,9 @@ const Header = () => {
               justify="between"
               className="px-6 pb-6 border-b border-primary/40"
             >
-              <Button>LAUNCH APP</Button>
+              <LaunchAppModal>
+                <Button>LAUNCH APP</Button>
+              </LaunchAppModal>
               <Button
                 iconOnly
                 variant="bordered"
@@ -251,3 +262,24 @@ const Header = () => {
 };
 
 export default Header;
+
+const LaunchAppModal = ({ children }: PropsWithChildren) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  return (
+    <>
+      {cloneElement(children as any, { onClick: onOpen })}
+      <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          <>
+            <ModalBody>
+              <div className="text-3xl font-bold my-12 mx-4 text-center">
+                Coming soon
+              </div>
+            </ModalBody>
+          </>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+};
