@@ -32,15 +32,15 @@ const HeroSection = () => {
           </p>
 
           <HStack className="mt-8 flex-col lg:flex-row justify-start items-start">
-            <Button
-              className="text-white w-full lg:w-fit"
-              size="lg"
-              endIcon={
-                <img src={arrowRightIcon} alt="arrow" className="ml-3" />
-              }
-            >
-              Get in touch
-            </Button>
+            <a href="https://forms.gle/SrKC1Wbf78jun1WR9" target="_blank" rel="noopener noreferrer">
+              <Button
+                className="text-white w-full lg:w-fit"
+                size="lg"
+                endIcon={<img src={arrowRightIcon} alt="arrow" className="ml-3" />}
+              >
+                Get in touch
+              </Button>
+            </a>
             <Input
               placeholder="Enter your email address"
               className="w-full lg:max-w-[378px]"
