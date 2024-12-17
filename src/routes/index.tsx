@@ -25,7 +25,7 @@ const AppRouter = () => {
   return (
     <Router
       basename={
-        process.env.NODE_ENV === "production" ? "/var-react-github/" : "/"
+        process.env.NODE_ENV === "production" ? "/prmx.insure/" : "/"
       }
     >
       <Routes>
