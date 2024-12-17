@@ -13,5 +13,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  base: process.env.NODE_ENV === "production" ? "/var-react-github/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/prxm.insure/" : "/",
 });
