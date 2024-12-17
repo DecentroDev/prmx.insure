@@ -23,11 +23,7 @@ const layouts: Layouts[] = [
 
 const AppRouter = () => {
   return (
-    <Router
-      basename={
-        process.env.NODE_ENV === "production" ? "/prmx.insure/" : "/"
-      }
-    >
+    <Router basename="/">
       <Routes>
         <Route path={ROUTES.HOME}>
           {layouts.map(({ path, isHeader, isFooter, component }) => (
