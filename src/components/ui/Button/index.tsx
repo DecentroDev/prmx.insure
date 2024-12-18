@@ -43,7 +43,7 @@ const buttonVariant = tv(
 
 interface Props
   extends HTMLMotionProps<"button">,
-    VariantProps<typeof buttonVariant> {
+  VariantProps<typeof buttonVariant> {
   asChild?: boolean;
   loadingIcon?: ReactNode;
   startIcon?: ReactNode;
@@ -63,7 +63,7 @@ const Button = forwardRef<"button", Props>((props, ref) => {
     size,
     iconOnly,
     loading,
-    loadingIcon = <Spinner className="h-5 w-5" />,
+    loadingIcon = <Spinner className="mr-2" size="sm" color="white" />,
     loadingPlacement = "start",
     startIcon,
     endIcon,
