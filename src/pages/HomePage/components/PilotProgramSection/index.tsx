@@ -30,10 +30,11 @@ const PilotProgramSection = () => {
                 Transparent terms and instant payouts for natural disasters.
               </li>
             </ul>
-
-            <Button className="min-w-[130px] text-white" size="lg">
-              Join Pilot
-            </Button>
+            <a href="https://forms.gle/SrKC1Wbf78jun1WR9" target="_blank" rel="noopener noreferrer">
+              <Button className="min-w-[130px] text-white" size="lg">
+                Join Pilot
+              </Button>
+            </a>
           </div>
         </div>
       </div>

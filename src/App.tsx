@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <AppRouter />
-      <Toaster />
+      <Toaster duration={4000} />
     </>
   );
 }
