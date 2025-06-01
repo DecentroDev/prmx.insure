@@ -25,7 +25,7 @@ const HeroSection = () => {
           </h1>
           <p className={body({ variant: 20, className: "text-white mt-3" })}>
             Swift. Fair. Transparent. <br />
-            Starting with rainfall insurance in Luzon, Philippines in Q2/2025.
+            Starting with rainfall insurance in Luzon, Philippines in Q3/2025.
           </p>
 
           <ContactForm />
